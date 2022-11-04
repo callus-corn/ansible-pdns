@@ -1,0 +1,13 @@
+$TTL 3600
+$ORIGIN localdomain.
+@ IN SOA dns root (
+        20210906
+        3600
+        900
+        604800
+        900
+    )
+
+{% for record in record_list %}
+{{ record.host }} IN A {{ record.ip }}
+{% endfor %}

@@ -1,0 +1,11 @@
+---
+
+- name: setup dns
+  hosts: dns
+  become: yes
+  tasks:
+
+    - name: setup dns resolver
+      import_role:
+        name: pdns_recursor
+      tags: pdns_recursor
